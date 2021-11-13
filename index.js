@@ -138,45 +138,6 @@ async function run(){
 		})
 
 
-		// check admin
-		// app.get('/users/:id', async (res, req) => {
-		// 	// const email = req.params.email;
-		// 	// const query = {email: email};
-		// 	// const user = await usersCollection.findOne(query);
-
-		// 	// const id = req.params.id;
-		// 	// console.log(id);
-		// 	// const query = {_id: ObjectId(id)};
-		// 	// const products = await productsCollection.findOne(query);
-		// 	// res.json(products);
-		// 	// let isAdmin = false;
-
-
-		// 	if(user?.role === 'admin'){
-		// 		isAdmin= true;
-		// 	}
-		// 	res.json({admin:isAdmin});
-		// })
-
-// // getting shipping 
-// app.get('/shipping/:id', async(req, res) =>{
-// 	const id = req.params.id;
-// 	console.log(id);
-// 	const query = {_id: ObjectId(id)};
-// 	const shipping = await bookingsCollection.findOne(query);
-// 	res.json(shipping);
-// })
-
-
-// 	// delete api
-
-// 	app.delete('/shipping/:id', async (req, res) => {
-// 		const id = req.params.id;
-// 		console.log(id)
-// 		const query = {_id: ObjectId(id)};
-// 		const result = await servicesCollection.deleteOne(query);
-// 		res.json(result);
-// 	})
 }
 
 finally{
