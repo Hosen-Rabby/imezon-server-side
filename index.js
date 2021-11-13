@@ -28,6 +28,7 @@ async function run(){
 		const productsCollection = database.collection('products');
 		const usersCollection = database.collection('users');
 		const reviewsCollection = database.collection('reviews');
+		const ordersCollection = database.collection('orders');
 
 
 		// app.post('products')
@@ -45,6 +46,13 @@ async function run(){
 		app.post('/reviews', async(req, res) =>{
 			const review = req.body;
 			const result = await reviewsCollection.insertOne(review);
+			res.json(result);
+		})
+
+		// post api(orders)
+		app.post('/orders', async(req, res) =>{
+			const order = req.body;
+			const result = await ordersCollection.insertOne(order);
 			res.json(result);
 		})
 
@@ -77,6 +85,12 @@ async function run(){
 			const cursor = reviewsCollection.find({});
 			const users = await cursor.toArray();
 			res.send(users);
+		})
+		
+		app.get('/orders', async(req, res) =>{
+			const cursor = ordersCollection.find({});
+			const orders = await cursor.toArray();
+			res.send(orders);
 		})
 
 // 		// getting single products
