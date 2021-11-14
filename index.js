@@ -82,15 +82,19 @@ async function run(){
 		})
 
 		app.get('/reviews', async(req, res) =>{
-			const cursor = reviewsCollection.find({});
-			const users = await cursor.toArray();
-			res.send(users);
+			const email = req.query.email;
+			const query = {email:email}
+			const cursor = reviewsCollection.find(query);
+			const review = await cursor.toArray();
+			res.send(review);
 		})
 		
-		app.get('/orders', async(req, res) =>{
-			const cursor = ordersCollection.find({});
-			const orders = await cursor.toArray();
-			res.send(orders);
+		app.get('/orders', async(req, res) =>{			
+			const email = req.query.email;
+			const query = {email:email}
+			const cursor = ordersCollection.find(query);
+			const order = await cursor.toArray();
+			res.send(order);
 		})
 
 // 		// getting single products
