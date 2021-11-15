@@ -94,7 +94,6 @@ async function run(){
 		})
 
 
-
 		app.get('/reviews', async(req, res) =>{
 			const email = req.query.email;
 			const query = {email:email}
@@ -103,7 +102,7 @@ async function run(){
 			res.send(review);
 		})
 		
-		app.get('/orders', async(req, res) =>{			
+		app.get('/myorders', async(req, res) =>{			
 			const email = req.query.email;
 			const query = {email:email}
 			const cursor = ordersCollection.find(query);
